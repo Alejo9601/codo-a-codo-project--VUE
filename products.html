@@ -1,0 +1,295 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Electronic Store - Productos</title>
+      <!-- FAVICON -->
+      <link
+         rel="icon"
+         type="image/jpg"
+         href="/public/assets/img/Efavicon.png"
+      />
+      <!-- STYLES -->
+      <link href="css/globals.css" rel="stylesheet" />
+      <link href="css/products.css" rel="stylesheet" />
+      <!-- FONT-AWESOME ICONS -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <!-- WEB FONTS -->
+      <link
+         href="//fonts.googleapis.com/css?family=Glegoo:400,700"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <!-- SCRIPTS -->
+      <script
+         defer
+         rel="text/javascript"
+         src="js/menuTogglerController.js"
+      ></script>
+      <script
+         defer
+         rel="text/javascript"
+         type="module"
+         src="./js/paintProductsPage.js"
+      ></script>
+      <script defer rel="text/javascript" src="js/cartController.js"></script>
+   </head>
+   <body>
+      <!-- HEADER -->
+      <header class="header">
+         <div class="header-container header-container--top">
+            <div class="login">
+               <button>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+               </button>
+            </div>
+            <div class="logo">
+               <h1>
+                  Electronic Store
+                  <span>Tu tienda, Tu lugar</span>
+               </h1>
+            </div>
+            <div class="search">
+               <button>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+               </button>
+            </div>
+            <div class="cart">
+               <button class="btn-cart">
+                  <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                  <div class="cart__count"></div>
+               </button>
+               <div class="cart__detail">
+                  <ul></ul>
+               </div>
+            </div>
+         </div>
+         <!-- NAVIGATION BAR -->
+         <div class="header-container header-container--bottom">
+            <nav class="navbar navbar--header">
+               <div class="menu-toggler">
+                  <span></span>
+               </div>
+               <ul class="menu menu--inactive">
+                  <li class="menu-item">
+                     <a href="index.html">INICIO</a>
+                  </li>
+                  <li class="menu-item">
+                     <a href="products.html">PRODUCTOS</a>
+                  </li>
+                  <li class="menu-item">
+                     <a href="about.html">ACERCA DE</a>
+                  </li>
+                  <li class="menu-item">
+                     <a href="formulario.html">CONTACTO</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <!-- PRODUCTS BANNER -->
+      <section class="banner">
+         <div class="img-container img-container--smallbanner">
+            <img src="public/assets/img/banner1.jpg" />
+         </div>
+      </section>
+      <!-- MAIN CONTENT -->
+      <main>
+         <section class="section-content">
+            <div class="clearfix products">
+               <div class="products__left">
+                  <div class="products__left__categories">
+                     <h3>Categorias</h3>
+                     <ul>
+                        <li>
+                           <a href="#">Electronics</a>
+                        </li>
+                        <li>
+                           <a href="#">Electronics</a>
+                        </li>
+                        <li>
+                           <a href="#">Electronics</a>
+                        </li>
+                        <li>
+                           <a href="#">Electronics</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="products__right">
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+                  <div class="product-card product-card--md">
+                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <div class="product-description">
+                        <h5>Nombre del Producto</h5>
+                        <p><span>$150</span><i>$350</i></p>
+                     </div>
+                     <button>Añadir al carrito</button>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      <section class="section-content section-content--newsletter">
+         <div class="newsletter">
+            <div class="newsletter__left">
+               <h3>Newsletter</h3>
+               <p>
+                  Suscribete a nuestro newsletter y enterate de las mejores
+                  ofertas.
+               </p>
+            </div>
+            <form class="newsletter__form-right">
+               <input type="email" name="email" />
+               <button name="submit"></button>
+            </form>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer class="section-content section-content--footer">
+         <div class="footer-info">
+            <div class="footer-info__contact">
+               <h3>CONTACTO</h3>
+               <p>
+                  Puedes comunicarte con nosotros presencialmente o de manera
+                  online
+               </p>
+               <ul>
+                  <li>
+                     <i class="fa fa-map-marker" aria-hidden="true"></i>
+                     Direccion desconocida
+                  </li>
+                  <li>
+                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                     info@example.com
+                  </li>
+                  <li>
+                     <i class="fa fa-phone" aria-hidden="true"></i>
+                     +1234 567 567
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__frequent">
+               <h3>FRECUENTES</h3>
+               <ul>
+                  <li>
+                     <i> Preguntas Frecuentes </i>
+                  </li>
+                  <li>
+                     <i> Acerca de Nosotros </i>
+                  </li>
+                  <li>
+                     <i> Productos Propios </i>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__categories">
+               <h3>CATEGORIAS</h3>
+               <ul>
+                  <li>
+                     <i> Mobiles </i>
+                  </li>
+                  <li>
+                     <i> Jewelery </i>
+                  </li>
+                  <li>
+                     <i> Men's Clothing </i>
+                  </li>
+                  <li>
+                     <i> Women's Clothing </i>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__social">
+               <h3>SOCIAL</h3>
+               <ul class="social-networks">
+                  <li>
+                     <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                     <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="web-designers">
+            <p>© 2022 Electronic Store. All rights reserved</p>
+         </div>
+      </footer>
+   </body>
+</html>

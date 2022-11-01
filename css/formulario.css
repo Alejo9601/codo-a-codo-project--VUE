@@ -1,0 +1,30 @@
+#derecha {
+   width: 100%;
+   border: 1px;
+   height: auto;
+   overflow: hidden;
+}
+
+#izquierda {
+   width: 490px;
+}
+
+.page-title,
+.social-networks-container {
+   margin: 0 auto;
+   padding-top: 32px;
+}
+
+.social-networks-container ul {
+   padding: 0px;
+   margin: 20px 50px;
+   list-style: none;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.iframe-form-container {
+   display: flex; /** Get more deeper into this concept,is really usefull**/
+   flex-wrap: nowrap;
+   justify-content: center; /** Then we place the elements (form) and (iframe) in the center**/
+}

@@ -1,0 +1,399 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Electronic Store</title>
+      <!-- FAVICON -->
+      <link rel="icon" type="image/jpg" href="public/assets/img/Efavicon.png" />
+      <!-- STYLES -->
+      <link href="css/globals.css" rel="stylesheet" />
+      <link href="css/index.css" rel="stylesheet" />
+      <!-- FONT-AWESOME ICONS -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <!-- WEB FONTS -->
+      <link
+         href="//fonts.googleapis.com/css?family=Glegoo:400,700"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <!-- SCRIPTS -->
+      <script
+         defer
+         rel="text/javascript"
+         type="module"
+         src="js/index.js"
+      ></script>
+      <script defer rel="text/javascript" src="js/cartController.js"></script>
+      <script
+         defer
+         rel="text/javascript"
+         src="js/menuTogglerController.js"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   </head>
+   <body>
+      <div id="app">
+         <!-- HEADER -->
+      <header class="header">
+         <div class="header-container header-container--top">
+            <div class="login">
+               <button>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+               </button>
+            </div>
+            <div class="logo">
+               <h1>
+                  Electronic Store
+                  <span>Tu tienda, Tu lugar</span>
+               </h1>
+            </div>
+            <div class="search">
+               <button>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+               </button>
+            </div>
+            <div class="cart">
+               <button class="btn-cart">
+                  <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                  <div class="cart__count"></div>
+               </button>
+               <div class="cart__detail">
+                  <ul></ul>
+                  <p class="cart__detail__current-sum"></p>
+               </div>
+            </div>
+         </div>
+         <!-- NAVIGATION BAR -->
+         <div class="header-container header-container--bottom">
+            <nav class="navbar navbar--header">
+               <div class="menu-toggler">
+                  <span></span>
+               </div>
+               <ul class="menu menu--inactive">
+                  <li v-for="link in navbarLinks"class="menu-item">
+                     <a :href=link.reference>{{link.text}}</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <!-- HOME BANNER -->
+      <section class="banner">
+         <div class="img-container img-container--homebanner">
+            <img src="public/assets/img/banner1.jpg" />
+         </div>
+      </section>
+      <!-- MAIN CONTENT -->
+      <main>
+         <!-- QUICK ACCESS PRODUCTS -->
+         <section class="section-content">
+            <div class="clearfix quick-access-products">
+               <div class="quick-access-products__left">
+                  <img src="./public/assets/img/lenovo_legion.png" alt="" />
+               </div>
+               <div class="quick-access-products__right">
+                  <nav class="navbar">
+                     <ul class="tabmenu tabmenu--product-categories">
+                        <li v-for="tabItem in tabMenu" class="tabmenu-item active">
+                           <span class="tabmenu-item__clickable"
+                              >{{tabItem}}</span
+                           >
+                        </li>
+                     </ul>
+                  </nav>
+                  <div class="grid-products">
+                     <div v-for="products in products" class="product-card product-card--sm">
+                        <img src="" alt="" />
+                        <div class="product-description">
+                           <h5>Nombre del Producto</h5>
+                           <p><span>$150</span><i>$350</i></p>
+                        </div>
+                        <button>Añadir al carrito</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- AGILE INFO -->
+         <section class="section-content">
+            <div class="agileinfo">
+               <div class="agileinfo__left">
+                  <img src="public/assets/img/agileinfo-img1.jpg" alt="" />
+                  <div class="agileinfo__description">
+                     <h3>
+                        Gran Evento de Inauguracion con
+                        <span>
+                           20%
+                           <i>Descuento</i>
+                        </span>
+                     </h3>
+                     <a href="#">COMPRAR AHORA</a>
+                  </div>
+               </div>
+               <div class="agileinfo__right">
+                  <img src="public/assets/img/agileinfo-img2.jpg" alt="" />
+                  <div class="agileinfo__countdown">
+                     <h4>OFERTA ESPECIAL</h4>
+                     <div class="rounded-container rounded-container--days">
+                        <span class="left-digit">0</span>
+                        <span class="right-digit">2</span>
+                        <span class="count-of">Dias</span>
+                     </div>
+                     <div class="rounded-container rounded-container--hours">
+                        <span class="left-digit">0</span>
+                        <span class="right-digit">0</span>
+                        <span class="count-of">Horas</span>
+                     </div>
+                     <div class="rounded-container rounded-container--minutes">
+                        <span class="left-digit">0</span>
+                        <span class="right-digit">1</span>
+                        <span class="count-of">Minutos</span>
+                     </div>
+                     <div class="rounded-container rounded-container--seconds">
+                        <span class="left-digit">1</span>
+                        <span class="right-digit">9</span>
+                        <span class="count-of">Segundos</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- SPECIAL DEALS -->
+         <section class="section-content">
+            <div class="section-title">
+               <h2>Ofertas Especiales</h2>
+            </div>
+            <div class="specialdeals">
+               <div class="img-container img-container--specialdeals-left">
+                  <img
+                     src="public/assets/img/speacialdeals-img1.jpg"
+                     alt="left-image"
+                  />
+                  <h3>
+                     OFRECEMOS
+                     <span>LOS MEJORES PRODUCTOS</span>
+                  </h3>
+                  <div
+                     class="rounded-container rounded-container--specialdeals"
+                  >
+                     <h5>
+                        30%
+                        <span>Off/-</span>
+                     </h5>
+                  </div>
+               </div>
+               <div class="img-container img-container--specialdeals-right">
+                  <img
+                     src="public/assets/img/speacialdeals-img2.jpg"
+                     alt="right-image"
+                     id="img-span2"
+                  />
+                  <h3>
+                     ESPECIAL
+                     <span>MUJERES</span>
+                  </h3>
+                  <h5>
+                     AHORRA
+                     <span>HASTA</span>
+                     30%
+                  </h5>
+               </div>
+               <div class="agile-real-experiences">
+                  <div class="card-carousel card-carousel--profiles">
+                     <div
+                        class="rounded-container rounded-container--profile"
+                     ></div>
+                     <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Consequatur, laboriosam et natus voluptas sed
+                        repellendus.
+                     </p>
+                     <div class="card-carousel__pagination">
+                        <span
+                           class="card-carousel__dot card-carousel__dot--highlighted"
+                        ></span>
+                        <span class="card-carousel__dot"></span>
+                        <span class="card-carousel__dot"></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- NEW PRODUCTS -->
+         <section class="section-content section-content--highlighted">
+            <div class="section-title">
+               <h2>Nuevos Productos</h2>
+            </div>
+            <div class="clearfix newproducts">
+               <div class="product-card product-card--lg">
+                  <img src="public/assets/img/productCardItem.jpg" alt="" />
+                  <div class="product-description">
+                     <h5>Nombre del Producto</h5>
+                     <p><span>$150</span><i>$350</i></p>
+                  </div>
+                  <button>Añadir al carrito</button>
+               </div>
+               <div class="product-card product-card--lg">
+                  <img src="public/assets/img/productCardItem.jpg" alt="" />
+                  <div class="product-description">
+                     <h5>Nombre del Producto</h5>
+                     <p><span>$150</span><i>$350</i></p>
+                  </div>
+                  <button>Añadir al carrito</button>
+               </div>
+               <div class="product-card product-card--lg">
+                  <img src="public/assets/img/productCardItem.jpg" alt="" />
+                  <div class="product-description">
+                     <h5>Nombre del Producto</h5>
+                     <p><span>$150</span><i>$350</i></p>
+                  </div>
+                  <button>Añadir al carrito</button>
+               </div>
+               <div class="product-card product-card--lg">
+                  <img src="public/assets/img/productCardItem.jpg" alt="" />
+                  <div class="product-description">
+                     <h5>Nombre del Producto</h5>
+                     <p><span>$150</span><i>$350</i></p>
+                  </div>
+                  <button>Añadir al carrito</button>
+               </div>
+            </div>
+         </section>
+      </main>
+      <section class="section-content section-content--newsletter">
+         <div class="clearfix newsletter">
+            <div class="newsletter__left">
+               <h3>Newsletter</h3>
+               <p>
+                  Suscribete a nuestro newsletter y enterate de las mejores
+                  ofertas.
+               </p>
+            </div>
+            <form class="newsletter__form-right">
+               <input type="email" name="email" />
+               <button name="submit"></button>
+            </form>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer class="section-content section-content--footer">
+         <div class="footer-info">
+            <div class="footer-info__contact">
+               <h3>CONTACTO</h3>
+               <p>
+                  Puedes comunicarte con nosotros presencialmente o de manera
+                  online
+               </p>
+               <ul>
+                  <li>
+                     <i class="fa fa-map-marker" aria-hidden="true"></i>
+                     Direccion desconocida
+                  </li>
+                  <li>
+                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                     info@example.com
+                  </li>
+                  <li>
+                     <i class="fa fa-phone" aria-hidden="true"></i>
+                     +1234 567 567
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__frequent">
+               <h3>FRECUENTES</h3>
+               <ul>
+                  <li>
+                     <i> Preguntas Frecuentes </i>
+                  </li>
+                  <li>
+                     <i> Acerca de Nosotros </i>
+                  </li>
+                  <li>
+                     <i> Productos Propios </i>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__categories">
+               <h3>CATEGORIAS</h3>
+               <ul>
+                  <li>
+                     <i> Mobiles </i>
+                  </li>
+                  <li>
+                     <i> Jewelery </i>
+                  </li>
+                  <li>
+                     <i> Men's Clothing </i>
+                  </li>
+                  <li>
+                     <i> Women's Clothing </i>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-info__social">
+               <h3>SOCIAL</h3>
+               <ul class="social-networks">
+                  <li>
+                     <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                     <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="web-designers">
+            <p>© 2022 Electronic Store. All rights reserved</p>
+         </div>
+      </footer>
+      </div>
+      <script>
+         const app = new Vue({
+            el: "#app",
+            data: {
+               products: [
+                  "phone",
+                  "phone",
+                  "phone"
+               ],
+               navbarLinks: [
+                  {
+                     text: "INICIO",
+                     reference: "index.html"
+                  },
+                  {
+                     text: "PRODUCTOS",
+                     reference: "products.html"
+                  },
+                  {
+                     text: "ACERCA DE",
+                     reference: "about.html"
+                  },
+                  {
+                     text: "CONTACTO",
+                     reference: "formulario.html"
+                  }
+               ],
+               tabMenu: [
+                  "ELECTRONICS",
+                  "JEWELERY",
+                  "MEN'S CLOTHING",
+                  "WOMEN'S CLOTHING"
+               ]
+            }
+         })
+      </script>
+   </body>
+</html>

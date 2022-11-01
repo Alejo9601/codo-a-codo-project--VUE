@@ -1,0 +1,547 @@
+.img-container--homebanner {
+   width: 100%;
+   height: 72vh;
+}
+
+.img-container--homebanner img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+@media (max-width: 1170px) {
+   .img-container--homebanner {
+      height: 50vh;
+   }
+}
+
+/** SECTIONS general styles **/
+.quick-access-products,
+.agileinfo {
+   display: flex;
+}
+
+.specialdeals,
+.newproducts {
+   display: grid;
+   justify-items: center;
+}
+
+@media (max-width: 992px) {
+   .quick-access-products,
+   .agileinfo,
+   .newproducts {
+      flex-direction: column;
+   }
+}
+
+/** Quick access products - SECTION - **/
+.quick-access-products {
+   height: 455px;
+}
+
+.quick-access-products__right {
+   padding: 0px 15px;
+}
+
+.tabmenu--product-categories {
+   justify-content: flex-start;
+   display: flex;
+   list-style: none;
+}
+
+.tabmenu-item {
+   border-bottom: 1px solid var(--color-purple);
+   cursor: pointer;
+}
+
+.tabmenu-item__clickable {
+   display: block;
+   font-size: 1.2rem;
+   padding: 10px 15px;
+}
+
+.tabmenu-item.active .tabmenu-item__clickable {
+   background-color: var(--color-purple);
+   color: white;
+}
+
+.tabmenu-item__clickable:hover {
+   color: rgb(119, 153, 205);
+}
+
+.quick-access-products__left {
+   padding: 0px 15px;
+}
+
+.quick-access-products__left img {
+   height: 455px;
+   width: 455px;
+   object-fit: cover;
+}
+
+.grid-products {
+   margin-top: 30px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   justify-items: center;
+   gap: 15px;
+   -webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+   transition: all 0.3s ease;
+}
+
+@media (max-width: 1170px) {
+   .product-card--sm {
+      width: 158px;
+      height: 317px;
+   }
+   .product-card--sm img {
+      width: 100%;
+      height: 179px;
+   }
+   .quick-access-products__left img {
+      height: 400px;
+      width: 361px;
+   }
+}
+
+@media (max-width: 992px) {
+   .product-card--sm {
+      width: 215px;
+      height: 381px;
+   }
+   .product-card--sm img {
+      height: 244px;
+   }
+   .quick-access-products {
+      height: auto;
+   }
+   .quick-access-products__left img {
+      width: 100%;
+   }
+   .quick-access-products__right {
+      margin-top: 48px;
+   }
+}
+
+@media (max-width: 760px) {
+   .product-card--sm {
+      width: 180px;
+      height: 317px;
+   }
+   .product-card--sm img {
+      width: 100%;
+      height: 204px;
+   }
+}
+
+@media (max-width: 680px) {
+   .product-card--sm {
+      width: 158px;
+      height: 317px;
+   }
+   .product-card--sm img {
+      width: 100%;
+      height: 179px;
+   }
+}
+
+@media (max-width: 580px) {
+   .tabmenu--product-categories {
+      flex-direction: column;
+      border-bottom: 1px solid var(--color-purple);
+   }
+   .tabmenu-item {
+      border-bottom: 0px;
+      cursor: pointer;
+   }
+   .tabmenu-item__clickable {
+      text-align: center;
+   }
+   .grid-products {
+      grid-template-columns: 1fr;
+   }
+   .product-card--sm {
+      width: 215px;
+      height: 381px;
+   }
+   .product-card--sm img {
+      height: 244px;
+   }
+}
+
+/** Agile info - SECTION -**/
+.agileinfo {
+   height: 400px;
+   width: 100%;
+}
+
+.agileinfo__left {
+   width: 60%;
+   position: relative;
+}
+
+.agileinfo__right {
+   position: relative;
+   width: 40%;
+}
+
+.agileinfo__left img,
+.agileinfo__right img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+.agileinfo__description {
+   display: flex;
+   align-items: flex-end;
+   flex-direction: column;
+   position: absolute;
+   top: 25%;
+   right: 5%;
+   color: black;
+}
+
+.agileinfo__description h3 {
+   display: flex;
+   flex-direction: column;
+   color: #212121;
+   text-align: right;
+   font-weight: lighter;
+   font-style: italic;
+}
+
+.agileinfo__description h3 span {
+   color: var(--color-crimson);
+   font-size: 2.8rem;
+   font-weight: bold;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin-top: 20px;
+}
+
+.agileinfo__description h3 span i {
+   color: black;
+}
+
+.agileinfo a {
+   margin-top: 40px;
+   text-decoration: none;
+   font-size: 1.1rem;
+   letter-spacing: 2px;
+   color: var(--color-crimson);
+   background: url(../public/assets/img/arrow.png) no-repeat 150px -5px;
+   padding: 0 45px 0 0;
+   transition: background 1s ease;
+}
+
+.agileinfo a:hover {
+   color: black;
+   background: url(../public/assets/img/arrow.png) no-repeat 150px -38px;
+}
+
+.agileinfo__countdown {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 15px;
+}
+
+.agileinfo__countdown h4 {
+   grid-column: span 4;
+   justify-self: center;
+   width: fit-content;
+   color: white;
+   background-color: #212121;
+   padding: 2px 10px;
+   border: 1px solid white;
+   margin-bottom: 15px;
+}
+
+.agileinfo__countdown .rounded-container {
+   width: 90px;
+   height: 90px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-content: center;
+}
+
+.agileinfo__countdown .rounded-container span {
+   color: white;
+}
+
+.agileinfo__countdown .rounded-container .left-digit {
+   width: 50%;
+   font-size: 2.3rem;
+   line-height: 1.1;
+   text-align: end;
+}
+.agileinfo__countdown .rounded-container .right-digit {
+   width: 50%;
+   font-size: 2.3rem;
+   line-height: 1.1;
+   text-align: start;
+}
+
+.agileinfo__countdown .rounded-container .count-of {
+   width: 100%;
+   text-align: center;
+   font-style: italic;
+   font-weight: 600;
+}
+
+@media (max-width: 1170px) {
+   .agileinfo__description h3 span {
+      font-size: 2.3rem;
+   }
+   .agileinfo a {
+      font-size: 1rem;
+   }
+   .agileinfo__countdown .rounded-container {
+      width: 80px;
+      height: 80px;
+   }
+   .agileinfo__countdown .rounded-container .count-of {
+      font-size: 13px;
+   }
+}
+
+@media (max-width: 992px) {
+   .agileinfo {
+      height: auto;
+   }
+   .agileinfo__left,
+   .agileinfo__right {
+      height: 335px;
+      width: 100%;
+   }
+}
+
+/** Special Deals - SECTION - **/
+.specialdeals {
+   grid-template-columns: 628px 400px;
+   grid-template-rows: 300px 300px;
+   gap: 30px;
+}
+
+.img-container--specialdeals-left,
+.img-container--specialdeals-right {
+   position: relative;
+}
+
+.img-container--specialdeals-left img,
+.img-container--specialdeals-right img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.img-container h3,
+.img-container h5 {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   font-size: 2.3rem;
+}
+
+.img-container h3 {
+   color: white;
+   font-weight: lighter;
+}
+
+.img-container--specialdeals-left {
+   overflow: hidden;
+}
+
+.img-container--specialdeals-left img {
+   transition: transform 0.5s ease;
+}
+
+.img-container--specialdeals-left:hover img {
+   transform: scale(1.1);
+}
+
+.img-container--specialdeals-left h3 {
+   top: 45%;
+   left: 10%;
+}
+
+.img-container--specialdeals-left h3 span {
+   margin-top: 5px;
+   color: var(--color-crimson);
+   font-weight: 500;
+   margin-left: 40px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.rounded-container--specialdeals {
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   top: 5%;
+   right: 5%;
+}
+
+.rounded-container--specialdeals h5 {
+   color: white;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.3rem;
+   font-weight: lighter;
+   line-height: 1.1;
+}
+
+.rounded-container--specialdeals h5 span {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.agile-real-experiences {
+   background-color: var(--color-purple);
+}
+
+.img-container--specialdeals-right {
+   grid-row: span 2;
+}
+
+.img-container--specialdeals-right h3 {
+   display: block;
+   top: 5%;
+   right: 10%;
+}
+
+.img-container--specialdeals-right h3 span {
+   font-weight: bold;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.img-container--specialdeals-right h5 {
+   color: var(--color-crimson);
+   top: 13%;
+   right: 10%;
+}
+
+.img-container--specialdeals-right h5 span {
+   color: white;
+   align-self: center;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 300;
+}
+
+.card-carousel--profiles {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.card-carousel--profiles p,
+.rounded-container--profile,
+.card-carousel__dot {
+   transition: all 0.5s ease-in;
+}
+
+.card-carousel--profiles p {
+   padding: 0px 40px;
+   text-align: center;
+   color: white;
+}
+
+.rounded-container--profile {
+   width: 90px;
+   height: 90px;
+   background-color: white;
+}
+
+.card-carousel__pagination {
+   display: flex;
+}
+
+.card-carousel__dot {
+   border-radius: 50%;
+   display: block;
+   height: 10px;
+   width: 10px;
+   margin-right: 7px;
+   background-color: white;
+}
+
+.card-carousel__dot.card-carousel__dot--highlighted {
+   background-color: black;
+   box-shadow: 0px 0px 7px 0px black;
+}
+
+@media (max-width: 1170px) {
+   .specialdeals {
+      grid-template-columns: 530px 350px;
+      grid-template-rows: 250px 250px;
+   }
+}
+
+@media (max-width: 992px) {
+   .specialdeals {
+      height: auto;
+      grid-template-columns: 80vw;
+      grid-template-rows: auto auto auto;
+      gap: 30px;
+   }
+   .img-container--specialdeals-right {
+      grid-row: auto;
+   }
+   .card-carousel--profiles,
+   .img-container--specialdeals-left {
+      height: 300px;
+   }
+}
+
+/** New products - SECTION - **/
+.newproducts {
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 30px;
+}
+
+@media (max-width: 1170px) {
+   .product-card--lg {
+      width: 205px;
+      height: 410px;
+   }
+   .product-card--lg img {
+      height: 273px;
+   }
+}
+
+@media (max-width: 992px) {
+   .product-card--lg {
+      width: 150px;
+      height: 337px;
+   }
+   .product-card--lg img {
+      height: 200px;
+   }
+}
+
+@media (max-width: 760px) {
+   .newproducts {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 15px;
+   }
+   .product-card--lg {
+      width: 215px;
+      height: 381px;
+   }
+   .product-card--lg img {
+      height: 244px;
+   }
+}
+@media (max-width: 580px) {
+   .newproducts {
+      grid-template-columns: 1fr;
+   }
+}
