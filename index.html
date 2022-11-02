@@ -32,6 +32,12 @@
          type="module"
          src="js/index.js"
       ></script>
+      <script
+         defer
+         rel="text/javascript"
+         type="module"
+         src="js/getNewProducts.js"
+      ></script>
       <script defer rel="text/javascript" src="js/cartController.js"></script>
       <script
          defer
@@ -248,10 +254,10 @@
                      v-for="product in newProducts"
                      class="product-card product-card--lg"
                   >
-                     <img src="public/assets/img/productCardItem.jpg" alt="" />
+                     <img :src=product.image alt="" />
                      <div class="product-description">
-                        <h5>Nombre del Producto</h5>
-                        <p><span>$150</span><i>$350</i></p>
+                        <h5>{{product.title}}</h5>
+                        <p><span>$150</span><i>${{product.price}}</i></p>
                      </div>
                      <button>Añadir al carrito</button>
                   </div>
@@ -348,38 +354,45 @@
             </div>
          </footer>
       </div>
-      <script>
-         const app = new Vue({
-            el: "#app",
-            data: {
-               quickAccessProducts: ["phone", "phone", "phone"],
-               newProducts: ["product", "product", "product", "product"],
-               navbarLinks: [
-                  {
-                     text: "INICIO",
-                     reference: "index.html",
-                  },
-                  {
-                     text: "PRODUCTOS",
-                     reference: "products.html",
-                  },
-                  {
-                     text: "ACERCA DE",
-                     reference: "about.html",
-                  },
-                  {
-                     text: "CONTACTO",
-                     reference: "formulario.html",
-                  },
-               ],
-               tabMenu: [
-                  "ELECTRONICS",
-                  "JEWELERY",
-                  "MEN'S CLOTHING",
-                  "WOMEN'S CLOTHING",
-               ],
-            },
-         });
-      </script>
    </body>
+   <script type="module">
+      import getNewProducts from "./js/getNewProducts.js"
+      import getQuickAccessProducts from "./js/getQuickAccessProducts.js"
+
+      const app = new Vue({
+         el: "#app",
+         data: {
+            quickAccessProducts: [],
+            newProducts: [],
+            navbarLinks: [
+               {
+                  text: "INICIO",
+                  reference: "index.html",
+               },
+               {
+                  text: "PRODUCTOS",
+                  reference: "products.html",
+               },
+               {
+                  text: "ACERCA DE",
+                  reference: "about.html",
+               },
+               {
+                  text: "CONTACTO",
+                  reference: "formulario.html",
+               },
+            ],
+            tabMenu: [
+               "ELECTRONICS",
+               "JEWELERY",
+               "MEN'S CLOTHING",
+               "WOMEN'S CLOTHING",
+            ],
+         },
+         created() {
+            getNewProducts()
+               .then(result => this.newProducts = result)
+         }
+      });
+   </script>
 </html>
