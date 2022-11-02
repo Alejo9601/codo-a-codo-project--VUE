@@ -244,31 +244,10 @@
                   <h2>Nuevos Productos</h2>
                </div>
                <div class="clearfix newproducts">
-                  <div class="product-card product-card--lg">
-                     <img src="public/assets/img/productCardItem.jpg" alt="" />
-                     <div class="product-description">
-                        <h5>Nombre del Producto</h5>
-                        <p><span>$150</span><i>$350</i></p>
-                     </div>
-                     <button>Añadir al carrito</button>
-                  </div>
-                  <div class="product-card product-card--lg">
-                     <img src="public/assets/img/productCardItem.jpg" alt="" />
-                     <div class="product-description">
-                        <h5>Nombre del Producto</h5>
-                        <p><span>$150</span><i>$350</i></p>
-                     </div>
-                     <button>Añadir al carrito</button>
-                  </div>
-                  <div class="product-card product-card--lg">
-                     <img src="public/assets/img/productCardItem.jpg" alt="" />
-                     <div class="product-description">
-                        <h5>Nombre del Producto</h5>
-                        <p><span>$150</span><i>$350</i></p>
-                     </div>
-                     <button>Añadir al carrito</button>
-                  </div>
-                  <div class="product-card product-card--lg">
+                  <div
+                     v-for="product in newProducts"
+                     class="product-card product-card--lg"
+                  >
                      <img src="public/assets/img/productCardItem.jpg" alt="" />
                      <div class="product-description">
                         <h5>Nombre del Producto</h5>
@@ -374,6 +353,7 @@
             el: "#app",
             data: {
                quickAccessProducts: ["phone", "phone", "phone"],
+               newProducts: ["product", "product", "product", "product"],
                navbarLinks: [
                   {
                      text: "INICIO",
